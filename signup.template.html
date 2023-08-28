@@ -1,0 +1,16 @@
+<div>
+    <h2>Sign Up</h2>
+    <form name="signupForm" novalidate>
+        <label for="firstName">First Name:</label>
+        <input type="text" name="firstName" ng-model="user.firstName" required>
+
+        <!-- Other form fields (last name, email, phone number) -->
+
+        <label for="favoriteMenuItem">Favorite Menu Item:</label>
+        <input type="text" name="favoriteMenuItem" ng-model="user.favoriteMenuItem" ng-blur="checkFavoriteMenuItem()" required>
+        <p ng-show="invalidFavoriteMenuItem">No such menu number exists.</p>
+
+        <button ng-click="submitForm()" ng-disabled="signupForm.$invalid">Submit</button>
+    </form>
+    <p>{{ submissionMessage }}</p>
+</div>
